@@ -1,0 +1,130 @@
+.book_ipad_sleeve [title="Large"],
+.book_ipad_sleeve [title="Extra Small"],
+.book_ipad_sleeve [title="King"],
+.book_ipad_sleeve [title="Standard"],
+.book_ipad_sleeve [title="18x18"],
+.book_ipad_sleeve [title="16x16"],
+.book_ipad_sleeve [title="One Size fits most"] {
+  display: none;
+}
+.bouffant_scrub_cap [title="Extra Large"],
+.bouffant_scrub_cap [title="Large"],
+.bouffant_scrub_cap [title="Medium"],
+.bouffant_scrub_cap [title="Small"],
+.bouffant_scrub_cap [title="Extra Small"],
+.bouffant_scrub_cap [title="King"],
+.bouffant_scrub_cap [title="Standard"],
+.bouffant_scrub_cap [title="18x18"],
+.bouffant_scrub_cap [title="16x16"] {
+  display: none;
+}
+.custom_french_seam_pillow_cases [title="Extra Large"],
+.custom_french_seam_pillow_cases [title="Large"],
+.custom_french_seam_pillow_cases [title="Medium"],
+.custom_french_seam_pillow_cases [title="Small"],
+.custom_french_seam_pillow_cases [title="Extra Small"],
+.custom_french_seam_pillow_cases [title="18x18"],
+.custom_french_seam_pillow_cases [title="16x16"],
+.custom_french_seam_pillow_cases [title="One Size fits most"] {
+  display: none;
+}
+.domino_fitted_mask [title="King"],
+.domino_fitted_mask [title="Standard"],
+.domino_fitted_mask [title="18x18"],
+.domino_fitted_mask [title="16x16"],
+.domino_fitted_mask [title="One Size fits most"] {
+  display: none;
+}
+.harlequin_clutch [title="Extra Large"],
+.harlequin_clutch [title="Extra Small"],
+.harlequin_clutch [title="King"],
+.harlequin_clutch [title="Standard"],
+.harlequin_clutch [title="18x18"],
+.harlequin_clutch [title="16x16"],
+.harlequin_clutch [title="One Size fits most"] {
+  display: none;
+}
+.key_lanyard [title="Extra Large"],
+.key_lanyard [title="Medium"],
+.key_lanyard [title="Extra Small"],
+.key_lanyard [title="King"],
+.key_lanyard [title="Standard"],
+.key_lanyard [title="18x18"],
+.key_lanyard [title="16x16"],
+.key_lanyard [title="One Size fits most"] {
+  display: none;
+}
+.long_hair_scrub_cap [title="Extra Large"],
+.long_hair_scrub_cap [title="Large"],
+.long_hair_scrub_cap [title="Medium"],
+.long_hair_scrub_cap [title="Small"],
+.long_hair_scrub_cap [title="Extra Small"],
+.long_hair_scrub_cap [title="King"],
+.long_hair_scrub_cap [title="Standard"],
+.long_hair_scrub_cap [title="18x18"],
+.long_hair_scrub_cap [title="16x16"] {
+  display: none;
+}
+.pleated_masks [title="Extra Large"],
+.pleated_masks [title="King"],
+.pleated_masks [title="Standard"],
+.pleated_masks [title="18x18"],
+.pleated_masks [title="16x16"],
+.pleated_masks [title="One Size fits most"] {
+  display: none;
+}
+.reading_pocket_pillows [title="Extra Large"],
+.reading_pocket_pillows [title="Large"],
+.reading_pocket_pillows [title="Medium"],
+.reading_pocket_pillows [title="Small"],
+.reading_pocket_pillows [title="Extra Small"],
+.reading_pocket_pillows [title="King"],
+.reading_pocket_pillows [title="Standard"],
+.reading_pocket_pillows [title="One Size fits most"] {
+  display: none;
+}
+.scrub_caps [title="Extra Large"],
+.scrub_caps [title="Large"],
+.scrub_caps [title="Medium"],
+.scrub_caps [title="Small"],
+.scrub_caps [title="Extra Small"],
+.scrub_caps [title="King"],
+.scrub_caps [title="Standard"],
+.scrub_caps [title="18x18"],
+.scrub_caps [title="16x16"] {
+  display: none;
+}
+.scrub_tops [title="King"],
+.scrub_tops [title="Standard"],
+.scrub_tops [title="18x18"],
+.scrub_tops [title="16x16"],
+.scrub_tops [title="One Size fits most"] {
+  display: none;
+}
+.tear_drop_coin_purse [title="Extra Large"],
+.tear_drop_coin_purse [title="Medium"],
+.tear_drop_coin_purse [title="Extra Small"],
+.tear_drop_coin_purse [title="King"],
+.tear_drop_coin_purse [title="Standard"],
+.tear_drop_coin_purse [title="18x18"],
+.tear_drop_coin_purse [title="16x16"],
+.tear_drop_coin_purse [title="One Size fits most"] {
+  display: none;
+}
+.zippy_clutch [title="Extra Large"],
+.zippy_clutch [title="Extra Small"],
+.zippy_clutch [title="King"],
+.zippy_clutch [title="Standard"],
+.zippy_clutch [title="18x18"],
+.zippy_clutch [title="16x16"],
+.zippy_clutch [title="One Size fits most"] {
+  display: none;
+}
+[data-size-enabled="false"] {
+  pointer-events: none;
+  opacity: 0.25;
+}
+[data-size-enabled="true"] {
+  pointer-events: initial;
+  opacity: 1;
+}
