@@ -17,27 +17,13 @@
 		"oAP": "/.gitignore",
 		"oF": 0
 		},
-	"/node_modules": {
-		"ft": 65536,
-		"oA": 2,
-		"oAP": "/build/node_modules",
-		"oF": 0
-		},
-	"/product_data_enhancement/.gitignore": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/product_data_enhancement/.gitignore",
-		"oF": 0
-		},
-	"/product_data_enhancement/css /styles.css": {
+	"/product_data_enhancement/css/styles.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/product_data_enhancement/css /styles-min.css",
+		"oAP": "/product_data_enhancement/css/styles-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -47,6 +33,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/product_data_enhancement/csv/040621_export_catalog_products.csv",
+		"oF": 0
+		},
+	"/product_data_enhancement/csv/040621_export_catalog_products_new.csv": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/product_data_enhancement/csv/040621_export_catalog_products_new.csv",
 		"oF": 0
 		},
 	"/product_data_enhancement/csv/040721_export_catalog_products.csv": {
@@ -113,6 +107,14 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"/product_data_enhancement/csv/catalog_products_01_new.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/product_data_enhancement/csv/catalog_products_01_new-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"/product_data_enhancement/Gruntfile.js": {
 		"bF": 0,
 		"ft": 64,
@@ -161,6 +163,12 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"/product_data_enhancement/node_modules": {
+		"ft": 65536,
+		"oA": 2,
+		"oAP": "/build/product_data_enhancement/node_modules",
+		"oF": 0
 		},
 	"/product_data_enhancement/old/022321allproductspage-ngc-version.png": {
 		"ft": 32768,
@@ -221,6 +229,25 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		}
 	},
 "hooks": [
@@ -229,7 +256,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 635491049.23332906,
-	"displayValue": "Domino Trendz",
+	"displayValue": "domino-trendz-data-enhancement",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-forest",
 	"iconImageWasSetByUser": 0
