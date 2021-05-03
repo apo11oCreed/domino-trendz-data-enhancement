@@ -91,6 +91,14 @@
 		"oAP": "/product_data_enhancement/csv/042221_export_catalog_products_backup.csv",
 		"oF": 0
 		},
+	"/product_data_enhancement/csv/050321_catalog_products_01.csv": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/product_data_enhancement/csv/050321_catalog_products_01.csv",
+		"oF": 0
+		},
 	"/product_data_enhancement/csv/Book1.csv": {
 		"cB": 0,
 		"ft": 8192,

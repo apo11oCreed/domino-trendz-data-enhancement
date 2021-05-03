@@ -1,30 +1,30 @@
 var productSizeObj = {
     "Domino Fitted Mask":{
-            oneSizeFitsMost: false,
-            specialOrder: false,
-            productVersionSizes: [
-                {
-                size: "Extra Large",
-                price: "0"
-                },
-                {
-                size: "Large",
-                price: "0"
-                },
-                {
-                size: "Medium",
-                price: "0"
-                },
-                {
-                size: "Small",
-                price: "0"
-                },
-                {
-                size: "Extra Small",
-                price: "12.0"
-                }
-            ]},
-            "Pleated Masks":{
+      oneSizeFitsMost: false,
+      specialOrder: false,
+      productVersionSizes: [
+          {
+          size: "Extra Large",
+          price: "0"
+          },
+          {
+          size: "Large",
+          price: "0"
+          },
+          {
+          size: "Medium",
+          price: "0"
+          },
+          {
+          size: "Small",
+          price: "0"
+          },
+          {
+          size: "Extra Small",
+          price: "12.0"
+          }
+      ]},
+      "Pleated Masks":{
       oneSizeFitsMost: false,
       specialOrder: false,
       productVersionSizes: [
@@ -264,13 +264,31 @@ function productNecromancer(data) {
 
         var oneSizeFitsMost,
         collection=collectionsArray[collections],
-        newProduct;
+        sizes=productSizeObj[collection].productVersionSizes,
+        sizesArray='',
+        newProduct,
+        firstProduct;
+
+        for(size in sizes){
+          if(size==sizes.length-1){
+            sizesArray+=sizes[size].size;
+          } else {
+            sizesArray+=sizes[size].size + ';';
+          }
+          
+        }
 
         oneSizeFitsMost=productSizeObj[collection].oneSizeFitsMost;
+
+        if(oneSizeFitsMost==false){
+          firstProduct=productSizeObj[collection].productVersionSizes.length-1;
+        }
+
 
         if (collections != 0) {
 
           newProduct = new Object();
+          
 
           newProduct.handleId = handleId + counter++;
           newProduct.fieldType = data[item].fieldType;
@@ -285,7 +303,7 @@ function productNecromancer(data) {
           newProduct.collections = collection;
           newProduct.sku = data[item].sku;
           newProduct.ribbon = data[item].ribbon;
-          newProduct.price = oneSizeFitsMost == false?productSizeObj[collection].productVersionSizes[0].price:data[item].price;
+          newProduct.price = oneSizeFitsMost == false ? productSizeObj[collection].productVersionSizes[firstProduct].price : data[item].price;
           newProduct.surcharge = data[item].surcharge;
           newProduct.visible = data[item].visible;
           newProduct.discountMode = data[item].discountMode;
@@ -310,7 +328,10 @@ function productNecromancer(data) {
             collection == "Long Hair Scrub Cap"
               ? "trash"
               : "DROP_DOWN";
-          newProduct.productOptionDescription1 = oneSizeFitsMost == false?productSizeObj[collection].productVersionSizes[0].size:data[item].productOptionDescription1;
+
+          newProduct.productOptionDescription1 = productSizeObj[collection] ==
+          "One Size fits most" ? 'trash' : sizesArray;
+
           newProduct.productOptionName2 = "trash";
           newProduct.productOptionType2 = "trash";
           newProduct.productOptionDescription2 = "trash";
@@ -349,7 +370,7 @@ function productNecromancer(data) {
 
           if(oneSizeFitsMost == false){
               
-            variantNecromancer(newProduct,collection);
+            variantNecromancer(newProduct,collection,firstProduct);
 
           }
 
@@ -370,7 +391,7 @@ function productNecromancer(data) {
           newProduct.collections = collectionsArray[0];
           newProduct.sku = data[item].sku;
           newProduct.ribbon = data[item].ribbon;
-          newProduct.price = data[item].price;
+          newProduct.price = oneSizeFitsMost == false ? productSizeObj[collection].productVersionSizes[firstProduct].price : data[item].price;
           newProduct.surcharge = data[item].surcharge;
           newProduct.visible = data[item].visible;
           newProduct.discountMode = data[item].discountMode;
@@ -393,10 +414,10 @@ function productNecromancer(data) {
             collection == "Long Hair Scrub Cap"
               ? "trash"
               : "DROP_DOWN";
-          newProduct.productOptionDescription1 =
-            productSizeObj[collectionsArray[0]] == "One Size fits most"
-              ? "trash"
-              : productSizeObj[collectionsArray[0]];
+
+          newProduct.productOptionDescription1 = productSizeObj[collection] ==
+              "One Size fits most" ? 'trash' : sizesArray;
+
           newProduct.productOptionName2 = "trash";
           newProduct.productOptionType2 = "trash";
           newProduct.productOptionDescription2 = "trash";
@@ -435,7 +456,7 @@ function productNecromancer(data) {
 
           if(oneSizeFitsMost == false){
               
-            variantNecromancer(newProduct,collection);
+            variantNecromancer(newProduct,collection,firstProduct);
 
           }
 
@@ -450,13 +471,13 @@ function productNecromancer(data) {
   $("#App").html(html);
 }
 
-function variantNecromancer(newProduct,collection) {
+function variantNecromancer(newProduct,collection,firstProduct) {
 
   var versionSizes=productSizeObj[collection].productVersionSizes;
 
       $.each(versionSizes, function (size) {
 
-        if(size!=0){
+        if(size!=firstProduct){
 
           var newVariant = new Object();
 
@@ -469,7 +490,7 @@ function variantNecromancer(newProduct,collection) {
           newVariant.sku = "trash";
           newVariant.ribbon = "trash";
           newVariant.price = "trash";
-          newVariant.surcharge = productSizeObj[collection].price; //
+          newVariant.surcharge = productSizeObj[collection].productVersionSizes[size].price; //
           newVariant.visible = newProduct.visible; //
           newVariant.discountMode = "trash";
           newVariant.discountValue = "trash";
@@ -477,7 +498,65 @@ function variantNecromancer(newProduct,collection) {
           newVariant.weight = "trash";
           newVariant.productOptionName1 = "trash";
           newVariant.productOptionType1 = "trash";
-          newVariant.productOptionDescription1 = productSizeObj[collection].size; //
+          newVariant.productOptionDescription1 = productSizeObj[collection].productVersionSizes[size].size; //
+          newVariant.productOptionName2 = "trash";
+          newVariant.productOptionType2 = "trash";
+          newVariant.productOptionDescription2 = "trash";
+          newVariant.productOptionName3 = "trash";
+          newVariant.productOptionType3 = "trash";
+          newVariant.productOptionDescription3 = "trash";
+          newVariant.productOptionName4 = "trash";
+          newVariant.productOptionType4 = "trash";
+          newVariant.productOptionDescription4 = "trash";
+          newVariant.productOptionName5 = "trash";
+          newVariant.productOptionType5 = "trash";
+          newVariant.productOptionDescription5 = "trash";
+          newVariant.productOptionName6 = "trash";
+          newVariant.productOptionType6 = "trash";
+          newVariant.productOptionDescription6 = "trash";
+          newVariant.additionalInfoTitle1 = "trash";
+          newVariant.additionalInfoDescription1 = "trash";
+          newVariant.additionalInfoTitle2 = "trash";
+          newVariant.additionalInfoDescription2 = "trash";
+          newVariant.additionalInfoTitle3 = "trash";
+          newVariant.additionalInfoDescription3 = "trash";
+          newVariant.additionalInfoTitle4 = "trash";
+          newVariant.additionalInfoDescription4 = "trash";
+          newVariant.additionalInfoTitle5 = "trash";
+          newVariant.additionalInfoDescription5 = "trash";
+          newVariant.additionalInfoTitle6 = "trash";
+          newVariant.additionalInfoDescription6 = "trash";
+          newVariant.customTextField1 = "trash";
+          newVariant.customTextCharLimit1 = "trash";
+          newVariant.customTextMandatory1 = "trash";
+          newVariant.customTextField2 = "trash";
+          newVariant.customTextCharLimit2 = "trash";
+          newVariant.customTextMandatory2 = "trash";
+
+          newData.push(newVariant);
+
+        } else {
+
+          var newVariant = new Object();
+
+          newVariant.handleId = newProduct.handleId; //
+          newVariant.fieldType = 'Variant';
+          newVariant.name = "trash";
+          newVariant.description = "trash";
+          newVariant.productImageUrl = "trash";
+          newVariant.collections = "trash";
+          newVariant.sku = "trash";
+          newVariant.ribbon = "trash";
+          newVariant.price = "trash";
+          newVariant.surcharge = 0; //
+          newVariant.visible = newProduct.visible; //
+          newVariant.discountMode = "trash";
+          newVariant.discountValue = "trash";
+          newVariant.inventory = newProduct.inventory; //
+          newVariant.weight = "trash";
+          newVariant.productOptionName1 = "trash";
+          newVariant.productOptionType1 = "trash";
+          newVariant.productOptionDescription1 = productSizeObj[collection].productVersionSizes[size].size; //
           newVariant.productOptionName2 = "trash";
           newVariant.productOptionType2 = "trash";
           newVariant.productOptionDescription2 = "trash";
