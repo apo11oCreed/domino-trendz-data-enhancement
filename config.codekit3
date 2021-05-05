@@ -99,6 +99,30 @@
 		"oAP": "/product_data_enhancement/csv/050321_catalog_products_01.csv",
 		"oF": 0
 		},
+	"/product_data_enhancement/csv/050321_catalog_products_01.xls": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/product_data_enhancement/csv/050321_catalog_products_01.xls",
+		"oF": 0
+		},
+	"/product_data_enhancement/csv/1-31.csv": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/product_data_enhancement/csv/1-31.csv",
+		"oF": 0
+		},
+	"/product_data_enhancement/csv/32-118.csv": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/product_data_enhancement/csv/32-118.csv",
+		"oF": 0
+		},
 	"/product_data_enhancement/csv/Book1.csv": {
 		"cB": 0,
 		"ft": 8192,
@@ -130,6 +154,14 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"/product_data_enhancement/csv/product_f005acaf-4307-7bf2-d0f9-b0b08521871d.csv": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/product_data_enhancement/csv/product_f005acaf-4307-7bf2-d0f9-b0b08521871d.csv",
+		"oF": 0
 		},
 	"/product_data_enhancement/Gruntfile.js": {
 		"bF": 0,

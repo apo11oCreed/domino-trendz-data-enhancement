@@ -263,6 +263,7 @@ function productNecromancer(data) {
       $.each(collectionsArray, function (collections) {
 
         var oneSizeFitsMost,
+        oneSizeFitsMostPrice,
         collection=collectionsArray[collections],
         sizes=productSizeObj[collection].productVersionSizes,
         sizesArray='',
@@ -282,6 +283,23 @@ function productNecromancer(data) {
 
         if(oneSizeFitsMost==false){
           firstProduct=productSizeObj[collection].productVersionSizes.length-1;
+        } else {
+          switch(collectionsArray(collections)) {
+          case 'Scrub Caps':
+            oneSizeFitsMostPrice='20.0';
+            break;
+          case 'Scrub Caps':
+            oneSizeFitsMostPrice='20.0';
+            break;
+          case 'Bouffant Scrub Cap':
+            oneSizeFitsMostPrice='25.0';
+            break;
+          case 'Long Hair Scrub Cap':
+            oneSizeFitsMostPrice='30.0';
+            break;
+          default:
+            oneSizeFitsMostPrice='20.0';
+        }
         }
 
 
@@ -294,16 +312,12 @@ function productNecromancer(data) {
           newProduct.fieldType = data[item].fieldType;
           newProduct.name =
             data[item].name + " " + collection;
-          newProduct.description =
-            productSizeObj[collection] ==
-            "One Size fits most"
-              ? data[item].description + " One Size fits most."
-              : data[item].description;
+          newProduct.description = productSizeObj[collection] == "One Size fits most" ? data[item].description + " One Size fits most." : data[item].description + " Please select a size before adding to cart.";
           newProduct.productImageUrl = data[item].productImageUrl;
           newProduct.collections = collection;
           newProduct.sku = data[item].sku;
           newProduct.ribbon = data[item].ribbon;
-          newProduct.price = oneSizeFitsMost == false ? productSizeObj[collection].productVersionSizes[firstProduct].price : data[item].price;
+          newProduct.price = oneSizeFitsMost == false ? productSizeObj[collection].productVersionSizes[firstProduct].price : oneSizeFitsMostPrice;
           newProduct.surcharge = data[item].surcharge;
           newProduct.visible = data[item].visible;
           newProduct.discountMode = data[item].discountMode;
@@ -382,16 +396,12 @@ function productNecromancer(data) {
           newProduct.fieldType = data[item].fieldType;
           newProduct.name =
             data[item].name + " " + collection;
-          newProduct.description =
-            productSizeObj[collection] ==
-            "One Size fits most"
-              ? data[item].description + " One Size fits most."
-              : data[item].description;
+          newProduct.description = productSizeObj[collection] == "One Size fits most" ? data[item].description + " One Size fits most." : data[item].description + " Please select a size before adding to cart.";
           newProduct.productImageUrl = data[item].productImageUrl;
           newProduct.collections = collectionsArray[0];
           newProduct.sku = data[item].sku;
           newProduct.ribbon = data[item].ribbon;
-          newProduct.price = oneSizeFitsMost == false ? productSizeObj[collection].productVersionSizes[firstProduct].price : data[item].price;
+          newProduct.price = oneSizeFitsMost == false ? productSizeObj[collection].productVersionSizes[firstProduct].price : oneSizeFitsMostPrice;
           newProduct.surcharge = data[item].surcharge;
           newProduct.visible = data[item].visible;
           newProduct.discountMode = data[item].discountMode;
